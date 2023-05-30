@@ -31,16 +31,6 @@ impl Digits {
     }
 }
 
-//
-// fn main() {
-//     let result = brute_force_solutions(51, vec![1,2,3,4,5,10].into_iter().collect(), &[]);
-//     println!("{:?}", result);
-//
-//     let result = brute_force_solutions(167, vec![2,3,5,7,9,15].into_iter().collect(), &[]);
-//     println!("{:?}", result);
-// }
-
-
 fn brute_force_solutions(target: u32, mut numbers: VecDeque<u32>, path: &[String]) -> Vec<Vec<String>> {
     numbers.make_contiguous().sort_by(|a, b| b.cmp(a));
     let combos = nc2(&numbers);
@@ -82,28 +72,24 @@ fn brute_force_solutions(target: u32, mut numbers: VecDeque<u32>, path: &[String
             return valid_paths;
         }
 
-        // PRODUCT path: a * b
         if valid_prod {
             let mut prod_nums = rest.clone();
             prod_nums.push_front(prod);
             valid_paths.extend(brute_force_solutions(target, prod_nums, &prod_path));
         }
 
-        // ADDITION path: a + b
         if valid_add {
             let mut add_nums = rest.clone();
             add_nums.push_front(add);
             valid_paths.extend(brute_force_solutions(target, add_nums, &add_path));
         }
 
-        // DIVISION path: a / b
         if div_exact {
             let mut div_nums = rest.clone();
             div_nums.push_front(div);
             valid_paths.extend(brute_force_solutions(target, div_nums, &div_path));
         }
 
-        // SUBTRACTION path: a - b
         if sub_positive {
             let mut sub_nums = rest.clone();
             sub_nums.push_front(sub);
