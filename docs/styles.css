@@ -1,0 +1,81 @@
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: center;*/
+    font-family: monospace;
+    /*white-space: pre;*/
+}
+#buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#digits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    white-space: pre;
+}
+#target {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    white-space: pre;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    white-space: pre;
+}
+.text-input {
+    width: 30px;
+    height: 30px;
+    border-radius: 5%;
+    font-family: monospace;
+    white-space: pre;
+    /*border: 1px solid black;*/
+    /*background-color: gray;*/
+    margin: 2px;
+}
+.answers {
+    width: 100px;
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.answer {
+
+}
+.selected-answer {
+    background-color: #00ff00;
+}
+
+#page {
+    display: flex;
+    flex-direction: row;
+    /*align-items: center;*/
+    justify-content: center;
+    font-family: monospace;
+    white-space: pre;
+    /*border: black solid 1px;*/
+}
+
+#inputs, #outputs {
+    /*border: black solid 1px;*/
+}
